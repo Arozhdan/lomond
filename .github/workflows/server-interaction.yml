@@ -1,0 +1,78 @@
+name: Server interactions
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Use PM2 stop/start/restart action'
+        required: true
+        default: 'restart'
+      whichServer:
+        description: 'On which server to run commands staging/production'
+        required: true
+        default: 'staging'
+jobs:
+  interact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node V12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install json parser for bash
+        run: npm install -g json
+
+      - name: Define ports
+        run: |
+          echo "PRODUCTION_PORT=$(cat ./.github/ports.json | json PRODUCTION_PORT)" >> $GITHUB_ENV
+          echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
+
+      - name: RUN PM2 ACTION ON STAGING
+        if: github.event.inputs.whichServer == 'staging'
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          envs: STAGING_PORT
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USERNAME }}
+          ## PRIVATE SSH KEY
+          key: ${{ secrets.STAGING_DEPLOY_KEY }}
+          ## AFTER SSH CONNECTION TO SERVER
+          ## GO INTO REPOSITORY
+          ## INSTALL NODE_MODULES
+          ## GET OUT OF DIRECTORY AND RESTART APPLICATION WITH PM2
+          script: |
+            echo "****************************************************"
+            echo "PM2 | action: ${{ github.event.inputs.action }} | application: ${{ github.event.repository.name }}"
+            echo "****************************************************"
+            echo "Exiting"
+            if [[ "${{ github.event.inputs.action }}" == "start" ]] || [[ "${{ github.event.inputs.action }}" == "restart" ]]; then
+              ./start_restart_script.sh ${{ github.event.repository.name }} $STAGING_PORT
+            else
+              ./stop_script.sh ${{ github.event.repository.name }}
+            fi;
+      - name: RUN PM2 ACTION ON PRODUCTION
+        if: github.event.inputs.whichServer == 'production'
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          envs: PRODUCTION_PORT
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USERNAME }}
+          ## PRIVATE SSH KEY
+          key: ${{ secrets.PRODUCTION_DEPLOY_KEY }}
+          ## AFTER SSH CONNECTION TO SERVER
+          ## GO INTO REPOSITORY
+          ## INSTALL NODE_MODULES
+          ## GET OUT OF DIRECTORY AND RESTART APPLICATION WITH PM2
+          script: |
+            echo "****************************************************"
+            echo "PM2 | action: ${{ github.event.inputs.action }} | application: ${{ github.event.repository.name }}"
+            echo "****************************************************"
+            echo "Exiting"
+            if [[ "${{ github.event.inputs.action }}" == "start" ]] || [[ "${{ github.event.inputs.action }}" == "restart" ]]; then
+              ./start_restart_script.sh ${{ github.event.repository.name }} $PRODUCTION_PORT
+            else
+              ./stop_script.sh ${{ github.event.repository.name }}
+            fi;

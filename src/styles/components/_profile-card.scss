@@ -1,0 +1,85 @@
+.profile-card{
+	display: block;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	&__ratio{
+		padding-bottom: 125%;
+		position: relative;
+	}
+	&__inner{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&__image{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	&__link-name{
+		display: inline-block;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		overflow: hidden;
+	}
+	&__video-layer{
+		z-index: 1;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: 0.3s ease opacity;
+	}
+	&__video-layer video{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	&__overlay{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		transition: 0.4s ease opacity;
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.66) 83%);
+	}
+	&__content{
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		width: 100%;
+		bottom: toRem(-84);
+		color: $red;
+		transition: 0.5s ease bottom, 0.25s ease color;
+	}
+}
+.profile-card:hover{
+	.profile-card{
+		&__video-layer{
+			opacity: 1;
+		}
+		&__content{
+			bottom: toRem(48);
+			color:$white;
+		}
+	}
+}
+
+.profile-card__video-layer--hovered{
+	opacity: 1;
+}

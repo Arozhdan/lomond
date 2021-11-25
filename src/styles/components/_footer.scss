@@ -1,0 +1,28 @@
+.footer{
+	padding: toRem(194) toRem(15);
+	position: relative;
+	&__bg{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	&__blocks-wrapper{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: toRem(24);
+	}
+	&__copy{
+		padding: toRem(24) toRem(24) toRem(32) toRem(24);
+		display: flex;
+		justify-content: center;
+		background: rgba($color: $dark, $alpha: $opacity-095);
+		>*{
+			opacity: 1;
+			color: $white;
+		}
+	}
+}

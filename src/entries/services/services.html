@@ -1,0 +1,34 @@
+{% extends "templates/body.njk" %}
+{% set bodyID = 'services' %}
+{% block body%}
+{% include "services/nunjucks/header.njk" %}
+<main>
+	<div class="gray-bg pt-16 pb-12">
+		<h1 class="h1 text-center">
+			What we do
+		</h1>
+		<p class="text-center text-body mt-6 max-w-lg mx-auto mb-8">
+			Lomond offers the full spectrum of Public Affairs and Corporate Communications services. Feel free to
+			explore our
+		</p>
+	</div>
+	<section class="services__list">
+		<div class="services__grid">
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+			{% include "templates/square-card.njk" %}
+		</div>
+		<div class="gray-bg flex justify-center py-16">
+			<a href="#" class="btn btn--red">Meet our team</a>
+		</div>
+	</section>
+	<div class="container max-w-5xl mx-auto my-36">
+		{% include "templates/articles.njk" %}
+	</div>
+</main>
+{% endblock %}

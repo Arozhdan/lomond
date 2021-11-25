@@ -1,0 +1,67 @@
+b, strong{
+	font-weight: bold;
+}
+i, em{
+	font-style: italic;
+}
+
+
+.text-body{
+  font-size: toRem(18);
+  font-weight: normal;
+  line-height: 1.78;
+  color: $dark;
+	opacity: $opacity-08;
+}
+
+.text-body-smaller{
+  font-size: toRem(16);
+  font-weight: normal;
+  line-height: 1.5;
+  color: $dark;
+	opacity: $opacity-08;
+}
+
+.text-body-bold{
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+}
+
+.subtitle-caps{
+  text-transform: uppercase;
+  font-size: toRem(16) !important;
+  font-weight: normal;
+  letter-spacing: 0.34px;
+  color: rgba($color: $white, $alpha: $opacity-09);
+}
+
+.h1{
+  font-family: $font-marya;
+	opacity: $opacity-09;
+  font-size: toRem(72);
+  font-weight: normal;
+  line-height: 1;
+}
+.h3{
+  font-family: $font-marya;
+  font-size: toRem(36);
+  font-weight: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+}
+
+.h4{
+  font-family: $font-marya;
+  font-size: toRem(32);
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+.color-red{
+	color: $red;
+}

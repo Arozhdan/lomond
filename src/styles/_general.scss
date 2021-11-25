@@ -1,0 +1,33 @@
+body{
+	overflow-x: hidden;
+	font-family: 'FaktPro' , sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: $dark;
+}
+
+.diamond-icon{
+	display: inline-block;
+	width: 6px;
+  height: 6px;
+  opacity: 0.9;
+  background-color: #e9483f;
+	transform: rotate(45deg);
+}
+.gray-bg{
+	background: rgba($color: $dark, $alpha: $opacity-008);
+}
+
+.only-seo{
+	display: inline-block;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.w-360{
+	width: toRem(360);
+}

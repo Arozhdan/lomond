@@ -1,0 +1,6 @@
+/src/!(templates)
+node_modules
+/.gitignore
+/.github
+/.git
+/.env

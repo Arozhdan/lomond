@@ -1,0 +1,4 @@
+{
+    "STAGING_PORT": 5110,
+    "PRODUCTION_PORT": 3110 
+}

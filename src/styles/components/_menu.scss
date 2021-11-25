@@ -1,0 +1,86 @@
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	z-index: 101;
+	background: rgba($dark, $opacity-095);
+	&__inner{
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		
+	}
+	&__top{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+		width: 100%;
+		padding: toRem(24) toRem(15);
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo{
+		width: 28px;
+  	height: 42px;
+	}
+	&__burger{
+		filter: brightness(100);
+	}
+	&__center{
+		display: flex;
+		align-items: flex-end;
+	}
+	&__navigator{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-right: toRem(168);
+	}
+	&__navigator a{
+		display: inline;
+		color: $white;
+		position: relative;
+		padding-right: toRem(72);
+		transition: 0.3s ease all;
+	}
+	&__navigator a::before{
+		position: absolute;
+		right: 10%;
+		opacity: 0;
+		top: 50%;
+		transform: translateY(-43%);
+		content: '';
+		display: block;
+		width: toRem(48);
+		height: toRem(40);
+		background-image: url('/src/assets/images/icons/arrow-right-icon-red.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-right: toRem(10);
+		transition: 0.3s ease all;
+	}
+	&__navigator a + a{
+		margin-top: toRem(32);
+	}
+	&__navigator a:hover{
+		color: $red;
+	}
+	&__navigator a:hover::before{
+		opacity: 1;
+		right: 0;
+	}
+	&__right{
+		display: flex;
+		flex-direction: column;
+	}
+}
+.menu--hidden{
+	display: none;
+}

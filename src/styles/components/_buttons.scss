@@ -1,0 +1,68 @@
+.btn{
+	display: inline-block;
+	min-width: 170px;
+	padding: toRem(22) toRem(24) toRem(18);
+  font-size: toRem(18);
+  letter-spacing: 0.39px;
+	text-align: center;
+	&--arrow{
+		min-width: toRem(175);
+		padding-right: toRem(58);
+		position: relative;
+		&::before{
+			filter: brightness(100);
+			content: '';
+			display:block;
+			position: absolute;
+			width: toRem(32);
+			height: toRem(32);
+			right: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			background-image: url('/src/assets/images/icons/arrow-right-icon.svg');
+		}
+	}
+	&--arrow-left{
+		min-width: toRem(175);
+		padding-left: toRem(58);
+		position: relative;
+		&::before{
+			filter: brightness(100);
+			content: '';
+			display:block;
+			position: absolute;
+			width: toRem(32);
+			height: toRem(32);
+			left: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			background-image: url('/src/assets/images/icons/arrow-left-icon.svg');
+		}
+	}
+	&--red{
+		background-color: $red;
+		color:$white;
+	}
+	&--dark{
+		background-color: $dark;
+		color:$white;
+	}
+	&--outline{
+		background: transparent;
+		color: $white;
+		border: solid 1px $white;
+	}
+	&--icon-left{
+		display: flex;
+		align-items: center;
+		img, svg{
+			margin-right: toRem(12);
+			width: toRem(24);
+			height: toRem(24);
+			transform: translateY(-2px);
+		}
+		&.btn--red img, svg{
+			filter: brightness(100);
+		}
+	}
+}

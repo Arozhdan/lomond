@@ -1,0 +1,56 @@
+{
+    "name": "Filip Raptopulos",
+    "description": [
+        "TRX Rip master trainer,kettle-bell instructor,VIPR national instructor,Pavi functional zone master trainer,Gun-ex instructor,TRX instructor,Pump-Fx instructor,Bulgarian Bag specialist,trener kulturistiky 2.třídy. Pohyb je pro něj život, nejen v tom se shodne s ostatními.",
+        "Ve 3DFA cítí stejnou krevní skupinu, společné smýšlení o pohybu, energii, profesionalitu, férovost a navíc všechny pojí dlouholeté přátelství. Říká, že když se trenér ubírá jen jedním směrem a nerozvíjí se, vyhoří. Viděl takových případů kolem sebe hodně."
+    ],
+    "bulletPoints": [
+        "Pohyb (trénink) dýchám, jím a piju!!!",
+        "Nesnáším hrubiánství a lhostejnost.",
+        "Miluji zvířata a skvěle vařím hahahaaaa… "
+    ],
+    "certifications": [
+        "Trenér xyz",
+        "Program certifikací xyz",
+        "Absolvent toho a toho... s diplomem :)"
+    ],
+    "imgURL": "/assets/images/man-on-yoga-mat.png",
+    "courses": [
+        {
+            "isNew": true,
+            "title": "Název kongresu",
+            "description": "Co proč jak… nejlepší akce pod sluncem a ještě k tomu bude cvičení.",
+            "date": "DD. MM. YYYY",
+            "location": "Karlovy Vary",
+            "imgSrc": "../assets/images/articles/article-image-7.png"
+        },
+        {
+            "isOnline": true,
+            "title": "Nejlepší kongres",
+            "description": "Co proč jak… nejlepší akce pod sluncem a ještě k tomu bude cvičení.",
+            "date": "DD. MM. YYYY",
+            "location": "Františkovy lázně",
+            "imgSrc": "../assets/images/articles/article-image-4.png"
+        }
+    ],
+    "articles": [
+        {
+            "title": "Raná specializace dětí ve sportu",
+            "introtext": "Problém nemusí být raná specializace, ale způsob vedení tréninku pouze jedním směrem! Ranáspecializace má také velká pozitiva pokud se jedná o kombinaci s jinými aktivitami,  proces učení je kvalitnější a dítě si také vytváří lásku k danému sportu.",
+            "date": "13. 5. 2020",
+            "imgUrl": "./../assets/images/articles/article-image-2.png"
+        },
+        {
+            "title": "FITNESS cviky, které škodí tělu – 5 odhalených hrůz",
+            "introtext": "Spousta lidí je stále dělá. Patříte mezi ně? Pokud jste fitness profesionál, tak doufáme, že jste se následující pětice fitness hrůz už dávno vzdali. Nebo snad ne?",
+            "date": "13. 5. 2020",
+            "imgUrl": "./../assets/images/articles/article-image-4.png"
+        },
+        {
+            "title": "Raná specializace dětí ve sportu",
+            "introtext": "Problém nemusí být raná specializace, ale způsob vedení tréninku pouze jedním směrem! Ranáspecializace má také velká pozitiva pokud se jedná o kombinaci s jinými aktivitami,  proces učení je kvalitnější a dítě si také vytváří lásku k danému sportu.",
+            "date": "13. 5. 2020",
+            "imgUrl": "./../assets/images/articles/article-image-1.png"
+        }
+    ]
+}

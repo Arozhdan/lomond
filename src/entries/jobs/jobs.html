@@ -1,0 +1,47 @@
+{% extends "templates/body.njk" %}
+{% set bodyID = 'jobs' %}
+{% block body%}
+{% include "jobs/nunjucks/header.njk" %}
+<main>
+	<div class="pt-16 pb-12">
+		<h1 class="h1 text-center">
+			We might be a good match
+		</h1>
+		<p class="text-center text-body mt-6 max-w-lg mx-auto mb-8">
+			We’re a new firm, with one simple objective:
+			to become acknowledged as the best quality Corporate Communications and Public Affairs consultancy operating in
+			Central
+			& Eastern Europe.
+		</p>
+	</div>
+	<div class="gray-bg">
+		<div class="text-image max-w-5xl mx-auto py-20">
+			<div class="text-image__left">
+				<div class="body-text mt-6 mb-12">
+					<p>To meet that objective, we will need to <b>hire great people</b> at every level. Great analytical brains.
+						Great
+						writers. Great
+						relationship-builders. <b>And we will invest in them</b> so that they can help us grow our business.
+					</p>
+					<br>
+					<p>
+						Sound appealing? If so, whether you are an experienced communications specialist, a recent graduate looking
+						for a first
+						<b>job in this industry,</b> or a student looking for an internship, please email us your <b>CV</b> and a
+						<b>covering letter.</b>
+					</p>
+				</div>
+				<div>
+					<a href="mailto:hr@lomond-cee.com" class="btn btn--red btn--arrow">hr@lomond-cee.com</a>
+				</div>
+			</div>
+			<div class="text-image__right">
+				<img src="https://via.placeholder.com/415x620/333?text=image" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="flex justify-center py-12">
+		<a href="/team.html" class="btn btn--red">Meet our team</a>
+	</div>
+</main>
+{% endblock %}

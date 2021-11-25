@@ -1,0 +1,9 @@
+.two-profiles{
+	&__inner{
+		display: flex;
+		justify-content: center;
+	}
+	&__inner > * + *{
+		margin-left: 1rem;
+	}
+}

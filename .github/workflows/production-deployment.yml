@@ -1,0 +1,73 @@
+name: Node production server deployment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  production_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node V12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+        ## JSON parser
+      - name: Install linux json parser package
+        run: npm install -g json
+
+      - name: Install node_modules
+        run: yarn install
+
+        ## SET PORT FROM ports.json
+      - name: Define PRODUCTION port
+        run: echo "PRODUCTION_PORT=$(cat ./.github/ports.json | json PRODUCTION_PORT)" >> $GITHUB_ENV
+        
+      - name: Download config files from server
+        env:
+            SSH_PRIVATE_KEY: ${{secrets.PRODUCTION_DEPLOY_KEY}}
+            SSH_KEY_PATH: $HOME/.ssh/deploy_key
+        run: |
+            SSHPATH="$HOME/.ssh"
+            mkdir "$SSHPATH"
+            echo "$SSH_PRIVATE_KEY" > "$SSHPATH/deploy_key"
+            chmod 700 "$SSHPATH"
+            chmod 600 "$SSHPATH/deploy_key"
+            sh -c "rsync -avz --delete -e \"ssh -o BatchMode=yes -o StrictHostKeyChecking=no -i $SSH_KEY_PATH\" -r ${{secrets.PRODUCTION_USERNAME}}@${{secrets.PRODUCTION_HOST}}:/home/${{secrets.PRODUCTION_USERNAME}}/${{ github.event.repository.name }}/.env ./"
+
+        ## BUILD PROJECT BASED ON COMMAND - WEBPACK, VUE-CLI etc..
+      - name: Build project
+        run: yarn run build
+
+        ## UPLOAD FILES TO SERVER
+      - name: Rsync with server
+        if: ${{ success() }}
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          ## SERVERIGNORE WORKS THE SAME AS .GITIGNORE, ONLY FOR RSYNC
+          switches: -avzr --delete --exclude-from='./serverignore.txt'
+          path: ./
+          remote_path: /home/${{ secrets.PRODUCTION_USERNAME }}/${{ github.event.repository.name }}
+          remote_host: ${{ secrets.PRODUCTION_HOST }}
+          remote_user: ${{ secrets.PRODUCTION_USERNAME }}
+          ## PRIVATE SSH KEY, PUBLIC SSH KEY MUST BE ADDED TO authorized_keys ON SERVER
+          remote_key: ${{ secrets.PRODUCTION_DEPLOY_KEY }}
+
+      - name: RESTART PM2 App
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          envs: PRODUCTION_PORT, GIT_SSH_COMMAND
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USERNAME }}
+          ## PRIVATE SSH KEY
+          key: ${{ secrets.PRODUCTION_DEPLOY_KEY }}
+          script: |
+            cd ${{ github.event.repository.name }}
+            echo "Updating node modules"
+            yarn install
+            echo "Running start/restart script"
+            echo "$PRODUCTION_PORT"
+            cd ..
+            ./start_restart_script.sh ${{ github.event.repository.name }} $PRODUCTION_PORT

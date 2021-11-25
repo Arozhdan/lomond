@@ -1,0 +1,10 @@
+.text-image{	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__left{
+		width: 50%;
+		flex-shrink: 0;
+		margin-right: toRem(80);
+	}
+}

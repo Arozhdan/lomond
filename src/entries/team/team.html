@@ -1,0 +1,27 @@
+{% extends "templates/body.njk" %}
+{% set bodyID = 'team' %}
+{% block body%}
+{% include "team/nunjucks/header.njk" %}
+<main>
+	{% include "templates/two-profiles.njk" %}
+	<h1 class="h1 text-center pb-16">
+		Senior Advisory Board
+	</h1>
+	<div class="team__collection">
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+		{% include "templates/profile-card.njk" %}
+	</div>
+	<div class="flex justify-center gray-bg py-12">
+		<a href="#" class="btn btn--red">What can we do for you?</a>
+	</div>
+	<div class="container max-w-5xl mx-auto my-36">
+		{% include "templates/articles.njk" %}
+	</div>
+</main>
+{{ScriptTags.addSrc('/widgets/card/profile-card.js')}}
+{% endblock %}

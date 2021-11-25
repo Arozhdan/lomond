@@ -1,0 +1,38 @@
+{% extends "templates/body.njk" %}
+{% set bodyID = 'homepage' %}
+{% block body%}
+{% include "index/nunjucks/header.njk" %}
+<main>
+    <div class="container max-w-5xl mx-auto my-40">
+        {% include "templates/bloct-text_video.njk" %}
+    </div>
+    <div class="gray-bg pb-12">
+        {% include "templates/two-profiles.njk" %}
+        <div class="flex justify-center">
+            <a href="#" class="btn btn--red">Meet our Senior Advisory Board</a>
+        </div>
+    </div>
+    <div class="container max-w-5xl mx-auto my-20">
+        {% include "templates/bloct-text_image.njk" %}
+    </div>
+    <div class="gray-bg pt-16 pb-12">
+        <h1 class="h1 text-center">
+            What we do
+        </h1>
+        <p class="text-center text-body mt-6 max-w-lg mx-auto mb-8">
+            Lomond offers the full spectrum of Public Affairs and Corporate Communications services. Feel free to
+            explore our
+            portfolio below.
+        </p>
+        {% include "templates/reveal-gallery.njk" %}
+        <div class="flex justify-center mt-12">
+            <a href="#" class="btn btn--red">What else can we do for you?</a>
+        </div>
+    </div>
+    <div class="container max-w-5xl mx-auto my-36">
+        {% include "templates/articles.njk" %}
+    </div>
+</main>
+{{ScriptTags.addSrc('/widgets/card/profile-card.js')}}
+{{ScriptTags.addSrc('/widgets/gallery/reveal-gallery.js')}}
+{% endblock %}

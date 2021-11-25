@@ -1,0 +1,52 @@
+{% extends "templates/body.njk" %}
+{% set bodyID = 'news' %}
+{% block body%}
+{% include "news/nunjucks/header.njk" %}
+<main>
+	<section class="gray-bg py-16">
+		<div class="flex justify-between max-w-5xl mx-auto items-start">
+			<div class="w-1/2 mr-20 flex-shrink-0">
+				<a href="#">
+					<h1 class="h1 mb-6">
+						Underrated Skills That Will Take You to the Top
+					</h1>
+				</a>
+				<a href="#">
+					<p class="text-body mb-12">
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer imperdiet
+						lectus
+						quisjusto. Nullam sit amet magna inmagna gravida vehicula. Aliquam ante.
+					</p>
+				</a>
+				<a href="#" class="btn btn--dark btn--arrow">Read the article</a>
+			</div>
+			<a href="#">
+				<img class="object-cover" src="https://via.placeholder.com/400x260/333?text=Big article image" alt="">
+			</a>
+		</div>
+	</section>
+	<section class="news__articles-wrapper max-w-5xl mx-auto py-16">
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+		{% include "templates/article-extended.njk" %}
+	</section>
+	<div class="gray-bg pt-16 pb-12">
+		<h1 class="h1 text-center">
+			What we do
+		</h1>
+		<p class="text-center text-body mt-6 max-w-lg mx-auto mb-8">
+			Lomond offers the full spectrum of Public Affairs and Corporate Communications services. Feel free to
+			explore our
+		</p>
+	</div>
+	<div class="flex justify-center py-12">
+		<a href="#" class="btn btn--red">See what we do</a>
+	</div>
+</main>
+{% endblock %}

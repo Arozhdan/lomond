@@ -1,0 +1,15 @@
+.text-video{	
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__left{
+		width: 50%;
+		flex-shrink: 0;
+		margin-right: toRem(80);
+	}
+	&__right video{
+		max-width: toRem(608);
+		transform: translateY(toRem(-24));
+	}	
+}

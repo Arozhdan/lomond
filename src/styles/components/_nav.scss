@@ -1,0 +1,32 @@
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		padding: 24px 15px;
+	}
+	&__right{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	
+	&__links a{
+  	font-size: toRem(16);
+		letter-spacing: 0.34px;
+		color: rgba($color: $white, $alpha: $opacity-09);
+	}
+	&__links a + a{
+		margin-left: toRem(24);
+	}
+
+	&__burger{
+		margin-left: toRem(40);
+		filter: brightness(100);
+		width: toRem(32);
+	}
+}

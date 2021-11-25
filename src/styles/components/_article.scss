@@ -1,0 +1,9 @@
+.article{
+	width: 100%;
+	max-width: 310px;
+	&__image{
+		width: 310px;
+		height: 206px;
+		object-fit: cover;
+	}
+}
