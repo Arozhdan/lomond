@@ -53,3 +53,12 @@
 		}
 	}
 }
+@include tablet-sm{
+	.square-card{
+		&__overlay{
+			top: 0;
+			background: transparent;
+			padding-bottom: toRem(24);
+		}
+	}
+}

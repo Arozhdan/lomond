@@ -26,3 +26,12 @@
 		}
 	}
 }
+@include tablet-sm{
+	.footer{
+		padding: toRem(32) toRem(0);
+		&__blocks-wrapper{
+			grid-template-columns: 1fr;
+			row-gap: toRem(24);
+		}
+	}
+}

@@ -1,0 +1,100 @@
+.is-loading .nav,
+.is-loading #main-wrapper {
+  display: none;
+}
+.is-loading {
+  background-color: $dark;
+}
+.loader, .loader__content {
+  min-height: 100vh;
+  position: fixed;
+  flex-direction: column;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  visibility: hidden;
+}
+.loader__mask {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: $dark url('assets/images/logos/lomond-logo-L-normal-white.svg') no-repeat center;
+  background-size: 10vw;
+  overflow: hidden;
+}
+
+.loader .inner,
+.loader__content .inner {
+  width:  27.36vw;
+  height: 50vh;
+}
+.loader .inner {
+  background-color: $red;
+  position: relative;
+
+}
+.loader .progress {
+  background-color: $white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 27.36vw;
+  height: 50vh;
+}
+.loader__content {
+  z-index: 102;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+.loader__title {
+  font-size: 7vw;
+  line-height: 8vw;
+  margin: 0;
+  color: $dark;
+  font-weight: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+}
+.loader__image {
+  width:  27.4vw;
+  padding-bottom: 50vh;
+  overflow: hidden;
+  position: relative;
+}
+.loader__image img {
+  top: 0;
+  left: 0%;
+  right: 0%;
+  width: 102%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.loader__title--mask {
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.loader__title--mask span {
+  display: block;
+}
+.loader__image--mask {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}

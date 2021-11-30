@@ -2,21 +2,21 @@
 {% set bodyID = 'services-detail' %}
 {% block body%}
 {% include "services-detail/nunjucks/header.njk" %}
-<main class="max-w-5xl mx-auto py-20">
-	<h1 class="h1 mb-6">Asessing political risks and identifying opportunity</h1>
+<main class="max-w-5xl mx-auto py-10 md:py-20">
+	<h1 class="h1 mb-6 px-4 md:px-0">Asessing political risks and identifying opportunity</h1>
 	<div class="services-detail__wrapper">
 		<div class="services-detail__left">
 			{% include "templates/rich-text-layout.njk" %}
-			<div class="flex justify-center py-16">
+			<div class="flex justify-center pt-6 pb-10 md:py-16">
 				<a href="/services.html" class="btn btn--red btn--arrow-left">Back to overview</a>
 			</div>
 		</div>
-		<div class="services-detail__right">
+		<div class="services-detail__right px-4 md:px-0">
 			{% include "services-detail/nunjucks/aside.njk" %}
 		</div>
 	</div>
 </main>
-<div class="max-w-5xl mx-auto py-20">
+<div class="max-w-5xl mx-auto pb-10 md:py-20 px-4 md:px-0">
 	{% include "templates/articles.njk" %}
 </div>
 {% endblock %}

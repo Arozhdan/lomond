@@ -1,3 +1,6 @@
 #news{
     @import "entries/news/styles/*.scss";
+    .nav__link--news::before{
+		left: 0;
+    }
 }

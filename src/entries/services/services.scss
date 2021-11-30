@@ -1,3 +1,6 @@
 #services{
     @import "entries/services/styles/*.scss";
+    .nav__link--services::before{
+		left: 0;
+    }
 }

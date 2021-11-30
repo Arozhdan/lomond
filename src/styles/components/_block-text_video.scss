@@ -13,3 +13,21 @@
 		transform: translateY(toRem(-24));
 	}	
 }
+
+@include tablet-sm{
+	.text-video{
+		&__inner{
+			display: block;
+		}
+		&__left{
+			width: 100%;
+			margin-right: 0;
+		}
+		&__right video{
+			width: calc(100% + 2rem);
+			margin-left: -1rem;
+			transform: translateY(0);
+		}
+	}
+}
+	

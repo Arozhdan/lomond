@@ -84,3 +84,15 @@
 .menu--hidden{
 	display: none;
 }
+@include tablet-sm{
+	.menu{
+		&__center{
+		display: block;
+		}
+		&__navigator{
+			margin-right: 0;
+			margin-bottom: toRem(32);
+		}
+	}
+	
+}

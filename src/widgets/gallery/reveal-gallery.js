@@ -1,4 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
 
 function initHoverReveal(){
 	const sections = document.querySelectorAll('.rg__column')
@@ -45,7 +44,7 @@ function createHoverReveal(e){
 
 		tl
 			.to(text, {y: 0}, 0)
-			.to(textHidden, {yPercent: 100})
+			.to(textHidden, {yPercent: 100}, 0)
 			.to([textMask, imageOverlay], {yPercent: -101}, 0)
 			.to(image, {scale: 1.1, duration: 1.1}, 0)
 	}

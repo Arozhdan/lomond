@@ -1,9 +1,11 @@
 <section clsas="homepage__articles">
 	<h1 class="h1 mb-6">Latest news & insights</h1>
-	<div class="flex justify-between mb-12">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-4 mb-6 md:mb-12">
 		{% include "templates/article.njk" %}
 		{% include "templates/article.njk" %}
 		{% include "templates/article.njk" %}
 	</div>
-	<a href="#" class="btn btn--red">See all insights</a>
+	<div class="flex md:block justify-center">
+		<a href="#" class="btn btn--red">See all insights</a>
+	</div>
 </section>

@@ -16,8 +16,10 @@ const toggleVideoPlay = function(element) {
 }
 
 const init = function() {
+	if(window.innerWidth < 768) {
+		return;
+	}
 	const profileCards = document.querySelectorAll('.profile-card');
-	console.log(profileCards.length);
 	profileCards.forEach(function(profileCard) {
 		toggleVideoPlay(profileCard);
 	});

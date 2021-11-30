@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include "templates/head/head.njk" %}
-<body id="{{ bodyID }}">
-{% include "templates/menu.njk" %}
-    {% block body %}
-    
-    {% endblock %}
-{% include "templates/footer.njk" %}
+<body id="{{ bodyID }}" class="is-loading" data-barba="wrapper">
+    {% include 'templates/loader.njk' %}
+    {% include 'templates/nav/nav.njk' %}
+    {% include "templates/menu.njk" %}
+    <div class="transition" style="position: fixed; bottom: 0; left: 250px; background-color: #ebebeb; padding: 20px; z-index: 105; transform: translateY(100%)">TRANSITION</div>
+    <div id="viewport">
+        <div id="main-wrapper" data-barba="container">
+        {% block body %}
+
+        {% endblock %}
+        {% include "templates/footer.njk" %}
+        </div>
+    </div>
+
 </body>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
 {% block scripts %}
+{{ScriptTags.addSrc('widgets/card/profile-card.js')}}
+{{ScriptTags.addSrc('widgets/gallery/reveal-gallery.js')}}
+{{ScriptTags.addSrc('widgets/general/transition.js')}}
+{{ScriptTags.addSrc('widgets/scroll/scroll.js')}}
 {{ScriptTags.addSrc('widgets/menu/menu.js')}}
+{{ScriptTags.addSrc('widgets/nav/nav.js')}}
 {{ScriptTags.toHTML() | safe}}
 {% endblock %}
 </html>

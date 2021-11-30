@@ -3,11 +3,18 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	max-width: 100vw;
 	z-index: 100;
+	&__logo{
+		transition: all .3s ease;
+	}
+	.logo-short{
+		display: none;
+	}
 	&__inner{
 		display: flex;
 		justify-content: space-between;
-		padding: 24px 15px;
+		padding: 24px 0;
 	}
 	&__right{
 		display: flex;
@@ -16,9 +23,23 @@
 	}
 	
 	&__links a{
+		display: inline-block;
   	font-size: toRem(16);
+		padding-bottom: toRem(4);
 		letter-spacing: 0.34px;
 		color: rgba($color: $white, $alpha: $opacity-09);
+		position: relative;
+		overflow: hidden;
+	}
+	&__links a::before{
+		content: '';
+		position: absolute;
+		left: -101%;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $red;
+		transition: all 0.3s ease-in-out;
 	}
 	&__links a + a{
 		margin-left: toRem(24);
@@ -28,5 +49,61 @@
 		margin-left: toRem(40);
 		filter: brightness(100);
 		width: toRem(32);
+		transition: all .3s ease;
+	}
+	&__links a.is-active::before{
+		left: 0;
+	}
+	&__links a:hover::before{
+		left: 0;
+	}
+}
+@include tablet-sm{
+	.nav{
+		&__links{
+			display: none;
+		}
+	}
+}
+@include desktop-sm{
+	.nav{
+		width: 90%;
+		max-width: 90vw;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+
+.nav--dark{
+	background: $gray;
+		&__logo .main{
+				fill: $dark;
+		}
+		&__links a{
+				color: rgba($color: $dark, $alpha: $opacity-09);
+		}
+		&__burger{
+				filter: brightness(0);
+		}
+}
+.menu--open{
+	.nav__burger{
+		visibility: hidden;
+	}
+}
+.has-scrolled{
+	.nav__logo{
+		transform: translateX(-100%);
+	}
+	.nav__burger{
+		transform: translateX(100%);
+		filter: brightness(0);
+	}
+	.logo-full{
+		display: none;
+	}
+	.logo-short{
+		display: block;
 	}
 }

@@ -83,3 +83,18 @@
 .profile-card__video-layer--hovered{
 	opacity: 1;
 }
+
+@include tablet-sm{
+	.profile-card{
+		video{
+			display: none !important;
+		}
+		&__content{
+			bottom: toRem(48);
+			color:$white;
+		}
+		.h3, .text-body-bold{
+			color: $red;
+		}
+	}
+}

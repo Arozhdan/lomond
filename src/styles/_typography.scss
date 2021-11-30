@@ -18,8 +18,7 @@ i, em{
   font-size: toRem(16);
   font-weight: normal;
   line-height: 1.5;
-  color: $dark;
-	opacity: $opacity-08;
+  color: rgba($dark,$opacity-08);
 }
 
 .text-body-bold{
@@ -45,6 +44,9 @@ i, em{
   font-size: toRem(72);
   font-weight: normal;
   line-height: 1;
+  @include tablet-sm{
+    font-size: toRem(48);
+  }
 }
 .h3{
   font-family: $font-marya;

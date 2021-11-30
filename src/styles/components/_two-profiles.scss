@@ -7,3 +7,14 @@
 		margin-left: 1rem;
 	}
 }
+
+@include tablet-sm{
+	.two-profiles{
+		&__inner{
+			display: block;
+		}
+		&__inner > * + *{
+			margin-left: 0;
+		}
+	}
+}

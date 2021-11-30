@@ -2,8 +2,9 @@
 @import "variables";
 @import "functions";
 @import "./fonts/fonts.css";
+@import "mixins";
 @import "typography";
-@import "general";
+@import "./general";
 
 @import "components/**/*.scss";
 

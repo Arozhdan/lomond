@@ -8,3 +8,16 @@
 		margin-right: toRem(80);
 	}
 }
+@include tablet-sm{
+	.text-image{
+		display: block;
+		&__left{
+			width: 100%;
+			margin-right: 0;
+		}
+		&__right{
+			width: calc(100% + 2rem);
+			margin-left: -1rem;
+		}
+	}
+}

@@ -1,68 +1,81 @@
-.btn{
-	display: inline-block;
-	min-width: 170px;
-	padding: toRem(22) toRem(24) toRem(18);
+.btn {
+  display: inline-block;
+  min-width: 170px;
+  padding: toRem(22) toRem(24) toRem(18);
   font-size: toRem(18);
   letter-spacing: 0.39px;
-	text-align: center;
-	&--arrow{
-		min-width: toRem(175);
-		padding-right: toRem(58);
-		position: relative;
-		&::before{
-			filter: brightness(100);
-			content: '';
-			display:block;
-			position: absolute;
-			width: toRem(32);
-			height: toRem(32);
-			right: 1rem;
-			top: 50%;
-			transform: translateY(-50%);
-			background-image: url('/src/assets/images/icons/arrow-right-icon.svg');
-		}
-	}
-	&--arrow-left{
-		min-width: toRem(175);
-		padding-left: toRem(58);
-		position: relative;
-		&::before{
-			filter: brightness(100);
-			content: '';
-			display:block;
-			position: absolute;
-			width: toRem(32);
-			height: toRem(32);
-			left: 1rem;
-			top: 50%;
-			transform: translateY(-50%);
-			background-image: url('/src/assets/images/icons/arrow-left-icon.svg');
-		}
-	}
-	&--red{
-		background-color: $red;
-		color:$white;
-	}
-	&--dark{
-		background-color: $dark;
-		color:$white;
-	}
-	&--outline{
-		background: transparent;
-		color: $white;
-		border: solid 1px $white;
-	}
-	&--icon-left{
-		display: flex;
-		align-items: center;
-		img, svg{
-			margin-right: toRem(12);
-			width: toRem(24);
-			height: toRem(24);
-			transform: translateY(-2px);
-		}
-		&.btn--red img, svg{
-			filter: brightness(100);
-		}
-	}
+  text-align: center;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  &--arrow {
+    min-width: toRem(175);
+    padding-right: toRem(58);
+    position: relative;
+    &::before {
+      filter: brightness(100);
+      content: "";
+      display: block;
+      position: absolute;
+      width: toRem(32);
+      height: toRem(32);
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("/src/assets/images/icons/arrow-right-icon.svg");
+    }
+  }
+  &--arrow-left {
+    min-width: toRem(175);
+    padding-left: toRem(58);
+    position: relative;
+    &::before {
+      filter: brightness(100);
+      content: "";
+      display: block;
+      position: absolute;
+      width: toRem(32);
+      height: toRem(32);
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("/src/assets/images/icons/arrow-left-icon.svg");
+    }
+  }
+  &--red {
+    background-color: $red;
+    color: $white;
+  }
+  &--dark {
+    background-color: $dark;
+    color: $white;
+  }
+  &--outline {
+    box-shadow: none !important;
+    background: transparent;
+    color: $white;
+    border: solid 1px $white;
+  }
+  &--icon-left {
+    display: flex;
+    align-items: center;
+    img,
+    svg {
+      margin-right: toRem(8);
+      width: toRem(24);
+      height: toRem(24);
+      transform: translateY(-2px);
+    }
+    &.btn--red img,
+    svg {
+      filter: brightness(100);
+    }
+  }
+}
+.btn:not(.no-transition){
+  transition: all 0.3s ease;
+}
+.btn:not(.btn--outline):hover {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 5px 9px -2px rgba(0, 0, 0, 0.08), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  &.btn--red, &.btn--dark {
+      background-color: lighten($color: $red, $amount: 5%);
+  }
 }

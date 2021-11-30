@@ -1,4 +1,8 @@
 .rich-text-layout{
+	@include tablet-sm{
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 	h1,h2,h3,h4,h5,h6, blockquote{
 		font-family: $font-marya;
 		font-size: toRem(36);
@@ -26,8 +30,12 @@
 	img{
 		object-fit: cover;
 		display: block;
-		width: 100%;
 		margin: toRem(32) 0;
+		@include tablet-sm{
+			max-width: unset;
+			width: calc(100% + 2rem);
+			margin: toRem(32) -1rem;
+		}
 	}
 	ul, ol{
 		margin: toRem(16) 0 toRem(24);
