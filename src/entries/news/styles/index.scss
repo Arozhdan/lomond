@@ -1,0 +1,9 @@
+ .news__articles-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: toRem(72) 1rem;
+    @include tablet-sm {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: toRem(24) 1rem;
+    }
+  }

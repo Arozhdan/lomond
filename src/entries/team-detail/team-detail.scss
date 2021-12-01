@@ -1,3 +1,22 @@
 #team-detail{
     @import "entries/team-detail/styles/*.scss";
+    .nav {
+        background: $gray;
+        &__logo .main {
+        fill: $dark;
+        }
+        &__links a {
+        color: rgba($color: $dark, $alpha: $opacity-09);
+        }
+        &__burger {
+        filter: brightness(0);
+        }
+    }
+    main {
+        padding-top: toRem(150);
+        padding-bottom: toRem(64);
+        @include tablet-sm {
+        padding-bottom: 0;
+        }
+    }
 }
