@@ -32,7 +32,7 @@ function updateProgress( value ) {
 }
 
 imgLoad.on( 'done', function( instance ) {
-    gsap.set(progressBar, {autoAlpha: 0, onComplete: initPageTransition});
+    gsap.set(progressBar, {autoAlpha: 0, onComplete: initLoader()});// change to initPageTransition()
 });
 
 function pageTransitionIn(){
@@ -96,20 +96,20 @@ function initLoader() {
 }
 
 function initPageTransition(){
-	barba.init({
-		transitions: [{
-			once(){
-				initLoader()
-			},
-			async leave(){
-				await pageTransitionIn()
-			},
-			enter(){
-				pageTransitionOut()
-			}
+	// barba.init({
+	// 	transitions: [{
+	// 		once(){
+	// 			initLoader()
+	// 		},
+	// 		async leave(){
+	// 			await pageTransitionIn()
+	// 		},
+	// 		enter(){
+	// 			pageTransitionOut()
+	// 		}
 
-		}]
-	})
+	// 	}]
+	// })
 }
 
 // window.addEventListener('load', function() {
